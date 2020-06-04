@@ -8,13 +8,13 @@ class Header extends Component {
     return (
       <header className="menu">
         <div className="menuList">
-          <Link to="/"><img className="logo" src={logo} aria-hidden alt="logo image"></img></Link>
+          <img className="logo" src={logo} aria-hidden alt="logo image"></img>
           <ul>
-            <li><Link to="./AdminLogin" >로그인</Link></li>
-            <li><Link to="/">증상정보 수정</Link></li>
+            <li><Link to="/CompleteLogin">증상정보 수정</Link></li>
             <li><Link to="/">약학정보 수정</Link></li>
             <li><Link to="/">근처병원찾기 수정</Link></li>
-            <li className="findParmacy"><Link to="/">근처약국찾기 수정</Link></li>
+            <li><Link to="/">근처약국찾기 수정</Link></li>
+            <li className="logoutBtn"><Link to="/">로그아웃</Link></li>
           </ul>
         </div>
       </header>
