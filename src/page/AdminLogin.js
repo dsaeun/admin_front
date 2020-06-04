@@ -1,38 +1,34 @@
-import React, { useState } from "react"
-import { Redirect } from "react-router-dom"
+import React, { useState } from "react";
+import {Link} from "react-router-dom";
+import CompleteLogin from "./CompleteLogin";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-function AdminLogin({ authenticated, login, location }) {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+function AdminLogin({history}) {
 
-  const handleClick = () => {
-    try {
-      login({ email, password })
-    } catch (e) {
-      alert("Failed to login")
-      setEmail("")
-      setPassword("")
-    }
+  const [inputID, setInputID] = useState("")
+  const [inputPW, setInputPW] = useState("")
+
+  function handleClick (e) {
+    {inputID === "admin" && inputPW === "1234" ? history.push('./CompleteLogin') : alert("login fail"); e.preventDefault();}
+    {/*성공시 AdminDisList 라우팅, 실패시 출력할 문자열 입력&자동렌더링 방지 */}
   }
-
-  const { from } = location.state || { from: { pathname: "/" } }
-  if (authenticated) return <Redirect to={from} />
 
   return (
     <div className="contentalign">
+      <h3 className="adminTitle">이 페이지는 관리자 전용 페이지입니다. 로그인을 하세요.</h3>
       <h1 className="loginTitle">Login</h1>
       <input
-      className="loginInput"
-        value={email}
-        onChange={({ target: { value } }) => setEmail(value)}
+        className="loginInput"
+        value={inputID}
+        onChange={({ target: { value } }) => setInputID(value)}
         type="text"
-        placeholder="email"
+        placeholder="ID"
       />
       <br></br>
       <input
-      className="loginInput"
-        value={password}
-        onChange={({ target: { value } }) => setPassword(value)}
+        className="loginInput"
+        value={inputPW}
+        onChange={({ target: { value } }) => setInputPW(value)}
         type="password"
         placeholder="password"
       /><br></br>

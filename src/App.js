@@ -2,18 +2,17 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import AdminLogin from './page/AdminLogin';
-import Header from './component/Header';
-
+import AdminDisList from './page/AdminDisList';
+import CompleteLogin from './page/CompleteLogin';
 
 function App() {
   return (
     <div>
       <Router>
-        <div>
-          <Header/>       
+        <div>      
           <Switch>
-            <Route exact path="/"><h1 className="adminTitle">이 페이지는 관리자 전용 페이지입니다. 로그인을 하세요.</h1></Route>
-            <Route path="/AdminLogin" component={AdminLogin}></Route>
+            <Route exact path="/" component={AdminLogin}></Route>
+            <Route path="/CompleteLogin" component={CompleteLogin}></Route>
           </Switch>
         </div>
       </Router>
