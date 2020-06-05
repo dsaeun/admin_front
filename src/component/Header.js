@@ -11,7 +11,7 @@ class Header extends Component {
           <img className="logo" src={logo} aria-hidden alt="logo image"></img>
           <ul>
             <li><Link to="/CompleteLogin">증상정보 수정</Link></li>
-            <li><Link to="/">약학정보 수정</Link></li>
+            <li><Link to="/Admindetail">약학정보 수정</Link></li>
             <li><Link to="/">근처병원찾기 수정</Link></li>
             <li><Link to="/">근처약국찾기 수정</Link></li>
             <li className="logoutBtn"><Link to="/">로그아웃</Link></li>
