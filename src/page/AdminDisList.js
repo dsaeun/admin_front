@@ -3,7 +3,6 @@ import '../App.css';
 import {Link} from "react-router-dom";
 import Header from '../component/Header'
 
-
 function AdminDisList() {
   return (
      <div>
