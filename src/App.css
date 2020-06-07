@@ -1,3 +1,10 @@
+.viewContain{
+  width:100%;
+  min-width: 1920px;
+  margin:0 auto;
+  overflow: visible;
+}
+
 .menu{
   background: linear-gradient(30deg, rgb(4, 73, 95), rgb(121, 200, 206));
   padding:20px;

@@ -5,16 +5,16 @@ import AdminDisList from "./AdminDisList"
 import AdminDetail from "./AdminDetail"
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-function CompleteLogin() {
+function CompleteLogin({match}) {
   return (
         <div>
-            <Header></Header>
             <div className="contentalign">
-                <Router>
+                <Route>
                     <Switch>
-                    <Route path="/" component={AdminDisList}></Route>
+                    <Route exact path={match.path} component={AdminDisList}></Route>
+                    <Route path={`${match.path}:id`} component={AdminDetail}></Route>
                     </Switch>
-                </Router>
+                </Route>
             </div>
         </div>
     )
