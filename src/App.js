@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import CompleteLogin from './page/CompleteLogin';
+import AdminDetail from './page/AdminDetail';
+import AdminDisList from './page/AdminDisList';
 
 function App() {
   return (
-    <div>
+    <div className="viewContain">
       <Router>
-        <div>      
-          <Switch>
+        <div>
+          <Switch>      
             <Route exact path="/" component={AdminLogin}></Route>
-            <Route path="/CompleteLogin" component={CompleteLogin}></Route>
+            <Route path="/AdminDisList" component={AdminDisList}></Route>
+            <Route path="/AdminDetail" component={AdminDetail}></Route>
           </Switch>
         </div>
       </Router>
@@ -24,7 +26,7 @@ function AdminLogin({history}) {
   const [inputPW, setInputPW] = useState("")
 
   function handleClick (e) {
-    {inputID === "admin" && inputPW === "1234" ? history.push('./CompleteLogin') : alert("login fail"); e.preventDefault();}
+    {inputID === "admin" && inputPW === "1234" ? history.push('./AdminDisList') : alert("login fail"); e.preventDefault();}
     {/*성공시 AdminDisList 라우팅, 실패시 출력할 문자열 입력&자동렌더링 방지 */}
   }
 
