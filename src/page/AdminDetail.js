@@ -1,11 +1,15 @@
 import React from "react";
 import '../App.css';
+import Header from '../component/Header';
 
 function AdminDetail() {
   return (
-     <div>
-        <h1>this is detail page</h1>
-    </div>
+    <div>
+    <Header></Header>
+    <div className="contentalign">
+    <h1>this is admin detail</h1>
+     </div>
+   </div>
   )
 }
 
