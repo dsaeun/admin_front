@@ -3,17 +3,19 @@ import Cookies from 'universal-cookie';
 
 import axios from 'axios';
 import AdminLogin from "../../page/AdminLogin";
+import Loading from "../common/Loading";
+
+require('dotenv').config();
 
 export default Component => {
     let WithAuth = () => {
         const [user, setUser] = useState({});
         const [token, setToken] = useState("");
-        const [status, setStatus] = useState(401);
-
-        const cookies = new Cookies();
+        const [status, setStatus] = useState(0);
 
         useEffect(() => {
-            axios.defaults.baseURL = "http://localhost:8010";
+            const cookies = new Cookies();
+            axios.defaults.baseURL = `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}`;
             const cookie_token = cookies.get("medical-admin-access-token");
             if (cookie_token) {
                 // 헤더에 Bearer token 설정
@@ -26,7 +28,7 @@ export default Component => {
                         setToken(response.data.token)
                     })
                     .catch(error => {
-                        cookies.remove("wiki-admin-access-token");
+                        cookies.remove("medical-admin-access-token");
                         setStatus(401);
                     });
             } else {
@@ -42,6 +44,8 @@ export default Component => {
             return <Component user={user} token={token} />;
         } else if (status === 401) {
             return <AdminLogin />;
+        } else {
+            return <Loading/>;
         }
     };
 
