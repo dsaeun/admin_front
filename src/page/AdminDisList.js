@@ -3,7 +3,7 @@ import '../App.css';
 import {Link} from "react-router-dom";
 import Header from '../component/Header'
 
-function AdminDisList() {
+let AdminDisList = () => {
   return (
      <div>
        <Header></Header>
@@ -13,6 +13,6 @@ function AdminDisList() {
        </div>
       </div>
   )
-}
+};
 
 export default AdminDisList;
