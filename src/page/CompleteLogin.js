@@ -5,7 +5,7 @@ import AdminDisList from "./AdminDisList";
 import AdminDetail from "./AdminDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function CompleteLogin() {
+function CompleteLogin({match}) {
   return (
     <Router>
       <div>
