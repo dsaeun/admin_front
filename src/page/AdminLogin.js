@@ -17,7 +17,6 @@ const AdminLogin = ({ history }) => {
       .then((response) => {
         const cookies = new Cookies();
         cookies.set("medical-admin-access-token", response.data.token);
-
         window.location.reload();
         // history.push('/');
         // {response ? history.push('/') : alert("login fail"); e.preventDefault();}
@@ -29,6 +28,7 @@ const AdminLogin = ({ history }) => {
         if (error.response) {
           console.error(error.response.data);
           setResult(error.response.data);
+          {alert(result.message)}
         }
       });
   }
@@ -54,9 +54,6 @@ const AdminLogin = ({ history }) => {
         type="password"
         placeholder="password"
       />
-        <text>
-            {result.message}
-        </text>
       <br></br>
       <button className="loginBtn" onClick={() => handleClick()}>
         Login
