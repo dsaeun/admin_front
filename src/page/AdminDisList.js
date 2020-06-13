@@ -20,7 +20,7 @@ let AdminDisList = () => {
         </ul>
       </div>
       
-      <button className="newDisBtn"><Link to="./AdminDetail">새 질병 추가</Link></button>
+      <button className="newDisBtn"><Link to="./AdminDisForm">새 질병 추가</Link></button>
 
       </div>
   )

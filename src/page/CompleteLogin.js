@@ -12,14 +12,12 @@ let CompleteLogin = () => {
       <div className="viewContain">
         <Header></Header>
         <div className="contentalign">
-          <Router>
             <Switch>
               <Route exact path="/" component={AdminDisList}></Route>
               <Route path="/AdminDisList" component={AdminDisList}></Route>
               <Route path="/AdminDetail" component={AdminDetail}></Route>
               <Route path="/AdminDisForm" component={AdminDisForm}></Route>
             </Switch>
-          </Router>
         </div>
       </div>
     </Router>

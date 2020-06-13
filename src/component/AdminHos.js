@@ -15,7 +15,10 @@ let AdminHos=()=> {
             X
         </button>
     </div>
-    <AdminEditSearch></AdminEditSearch>
+    <div>
+          <input type="text" className="searchBox"/>
+          <button className="searchBtn">search</button>
+        </div>
 
         <div className="editDisList">
         <ul>
