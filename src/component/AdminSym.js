@@ -8,16 +8,16 @@ let AdminSym=()=> {
   const menuList = menus.map((menu) => (<li>{menu}</li>));
   return (
 
-    <div>
-    <div className="checkedBox">
+    <div className="editDisTable">
+      <div className="checkedBox">
         파트-질병명
         <button className="removeBtn">
-            X
+              X
         </button>
-    </div>
-    <AdminEditSearch></AdminEditSearch>
+      </div>
+      <AdminEditSearch></AdminEditSearch>
 
-        <div className="editDisList">
+      <div className="editDisList">
         <ul>
           {menuList}
         </ul>

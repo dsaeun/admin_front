@@ -6,11 +6,13 @@ import AdminHos from './AdminHos';
 let AdminDisAdd=()=> {
   return (
     <div>
-      <table>
+      <table className="editDisTable">
         <tr>
           <td className="symTD">
           증상 : <AdminSym></AdminSym></td>
         </tr>
+        </table>
+        <table className="editDisTable">
         <tr>
           <td className="hosTD">진료 병원 : <AdminHos></AdminHos></td>
         </tr>
