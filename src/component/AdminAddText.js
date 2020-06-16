@@ -4,6 +4,7 @@ import '../App.css';
 let AdminAddText=()=> {
   return (
     <div>
+      <form id="textAdd">
       <table>
         <tr>
           <td>질병명 : <input type="text" className="disInput"></input></td>
@@ -15,8 +16,10 @@ let AdminAddText=()=> {
           <td className="cureTD">
             <textarea className="cureInput"></textarea>
           </td>
+
         </tr>
-  </table>
+      </table>
+      </form>
     </div>
   )
 }
