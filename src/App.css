@@ -2,7 +2,7 @@
   width:100%;
   min-width: 1920px;
   margin:0 auto;
-  overflow: visible;
+  overflow:hidden;
 }
 
 .menu{
@@ -173,4 +173,30 @@ li{
   border-width: 0.05em;
   border-style: solid;
   padding:20px;
+}
+
+td{
+  padding-top:50px;
+}
+
+.editDisTable{
+  padding-top:50px;
+}
+
+.disInput{
+  width:600px;
+  height:30px;
+  font-size: large;
+}
+
+.cureInput{
+  width:800px;
+  height:100px;
+  font-size: large;
+  overflow-y:scroll;
+  word-wrap: break-word;
+}
+
+.cureTD{
+  padding-top: 0;
 }

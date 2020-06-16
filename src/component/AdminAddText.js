@@ -7,10 +7,16 @@ let AdminAddText=()=> {
       <form id="textAdd">
       <table>
         <tr>
-          <td>질병명 : <input type="text" name="inputDisName"></input></td>
+          <td>질병명 : <input type="text" className="disInput"></input></td>
         </tr>
         <tr>
-          <td>치료법 : <input type="text" name="inputCure"></input></td>
+          <td>치료법 :</td>
+        </tr>
+        <tr>
+          <td className="cureTD">
+            <textarea className="cureInput"></textarea>
+          </td>
+
         </tr>
       </table>
       </form>
