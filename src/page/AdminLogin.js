@@ -18,19 +18,17 @@ const AdminLogin = ({ history }) => {
         const cookies = new Cookies();
         cookies.set("medical-admin-access-token", response.data.token);
         window.location.reload();
-        // history.push('/');
-        // {response ? history.push('/') : alert("login fail"); e.preventDefault();}
-        {
-          /*성공시 AdminDisList 라우팅, 실패시 출력할 문자열 입력&자동렌더링 방지 */
-        }
       })
       .catch((error) => {
         if (error.response) {
           console.error(error.response.data);
           setResult(error.response.data);
-          {alert(result.message)}
         }
       });
+  }
+
+  if (result.message) {
+    alert(result.message);
   }
 
   return (
