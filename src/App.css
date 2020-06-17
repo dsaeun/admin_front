@@ -118,13 +118,14 @@ div{
   font-size: 18px;
 }
 
-.Btn{
+.saveBtn, .editBtn{
   height:35px;
   font-size:18px;
   font:bold;
   margin-top: 30px;
   float:right;
   width:100px;
+  margin-bottom: 50px;
 }
 
 .editDisList{
@@ -182,7 +183,7 @@ td{
 }
 
 .editDisTable{
-  padding-top:50px;
+  padding-bottom:50px;
 }
 
 .disInput{
@@ -192,7 +193,7 @@ td{
 }
 
 .cureInput{
-  width:800px;
+  width:840px;
   height:200px;
   font-size: large;
   overflow-y:scroll;
@@ -202,6 +203,7 @@ td{
 
 .cureTD{
   padding-top: 0;
+  padding-bottom: 50px;
 }
 
 .newInput{
@@ -212,6 +214,6 @@ td{
 }
 
 .disFormAlign{
-  width:1000px;
+  width:900px;
   margin: 0 auto;
 }
