@@ -16,7 +16,7 @@ let AdminDisAdd=()=> {
         <tr>
           <td className="hosTD">진료 병원 : <AdminHos></AdminHos></td>
         </tr>
-  </table>
+      </table>
     </div>
   )
 }
