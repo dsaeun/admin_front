@@ -24,7 +24,6 @@ let AdminSym=()=> {
       </div>
       <AdminNewSym></AdminNewSym>
     </div>
-    
   )
 }
 

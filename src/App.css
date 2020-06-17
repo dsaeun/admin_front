@@ -76,7 +76,7 @@ a{
   margin:0 auto;
 }
 
-.searchBtn{
+.searchBtn, .addBtn{
   width:60px;
   height:35px;
   display: inline-block;
@@ -110,7 +110,7 @@ a{
 .containList{
   width:100%;
   height:400px;
-  overflow:scroll;
+  overflow-y:scroll;
   margin-top: 50px;
 }
 
@@ -170,8 +170,10 @@ li{
 }
 
 .symTD, .hosTD{
+  border-radius: 0px;
   border-width: 0.05em;
   border-style: solid;
+  border-radius: 20px;
   padding:20px;
 }
 
@@ -184,19 +186,32 @@ td{
 }
 
 .disInput{
-  width:600px;
+  width:720px;
   height:30px;
   font-size: large;
 }
 
 .cureInput{
   width:800px;
-  height:100px;
+  height:200px;
   font-size: large;
   overflow-y:scroll;
   word-wrap: break-word;
+  border-radius: 10px;
 }
 
 .cureTD{
   padding-top: 0;
+}
+
+.newInput{
+  width:200px;
+  height:30px;
+  display: inline-block;
+  margin:0 auto;
+}
+
+.disFormAlign{
+  width:1000px;
+  margin: 0 auto;
 }
