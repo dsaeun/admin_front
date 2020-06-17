@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 let AdminDetail=()=>{
   return (
     <div className="contentalign">
-      <button className="Btn">
+      <button className="editBtn">
         <Link to="./AdminDisForm">수정</Link>
         </button>
       <h1>질병 상세정보</h1>
