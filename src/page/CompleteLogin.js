@@ -4,7 +4,8 @@ import Header from "../component/Header";
 import AdminDisList from "./AdminDisList";
 import AdminDetail from "./AdminDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AdminDisForm from "./AdminDisForm";
+import AdminDisEditForm from "./AdminDisEditForm";
+import AdminDisAddForm from "./AdminDisAddForm";
 
 let CompleteLogin = () => {
   return (
@@ -16,7 +17,8 @@ let CompleteLogin = () => {
               <Route exact path="/" component={AdminDisList}></Route>
               <Route path="/AdminDisList" component={AdminDisList}></Route>
               <Route path="/AdminDetail" component={AdminDetail}></Route>
-              <Route path="/AdminDisForm" component={AdminDisForm}></Route>
+              <Route path="/AdminDisEditForm" component={AdminDisEditForm}></Route>
+              <Route path="/AdminDisAddForm" component={AdminDisAddForm}></Route>
             </Switch>
         </div>
       </div>

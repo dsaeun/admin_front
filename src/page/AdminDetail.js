@@ -6,7 +6,7 @@ let AdminDetail=()=>{
   return (
     <div className="contentalign">
       <button className="editBtn">
-        <Link to="./AdminDisForm">수정</Link>
+        <Link to="./AdminDisEditForm">수정</Link>
         </button>
       <h1>질병 상세정보</h1>
       <table>
