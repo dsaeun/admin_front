@@ -16,7 +16,7 @@ const Header = () => {
         <div className="menuList">
           <img className="logo" src={logo} aria-hidden alt="logo image"></img>
           <ul>
-            <li><Link to="./AdminDisList">질병정보 수정</Link></li>
+            <li><Link to="/AdminDisList">질병정보 수정</Link></li>
             <li><Link to="/">약학정보 수정</Link></li>
             <li><Link to="/">근처병원찾기 수정</Link></li>
             <li><Link to="/">근처약국찾기 수정</Link></li>
