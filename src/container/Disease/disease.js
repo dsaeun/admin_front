@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 const DiseaseContext = createContext({
   state: {
-    diseases: [
+    disease: [
       {
         name: "",
         code: "",
@@ -15,26 +15,26 @@ const DiseaseContext = createContext({
     subjects: [],
   },
   action: {
-    setDiseases: () => {},
+    setDisease: () => {},
     setSymptoms: () => {},
     setSubjects: () => {},
   },
 });
 
 const DiseaseProvider = ({ children }) => {
-  const [diseases, setDiseases] = useState([{
-      name: "",
-      code: "",
-      cure: "",
-      description: "",
-      image: "",
-  }]);
+  const [disease, setDisease] = useState({
+    name: "",
+    code: "",
+    cure: "",
+    description: "",
+    image: "",
+  });
   const [symptoms, setSymptoms] = useState([]);
   const [subjects, setSubjects] = useState([]);
 
   const value = {
-    state: { diseases, symptoms, subjects },
-    actions: { setDiseases, setSymptoms, setSubjects },
+    state: { disease, symptoms, subjects },
+    actions: { setDisease, setSymptoms, setSubjects },
   };
 
   return (

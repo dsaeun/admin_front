@@ -13,9 +13,9 @@ import DiseaseContext from "../container/Disease/disease";
 
 let AdminAddText = () => {
   const { state, actions } = useContext(DiseaseContext);
-  const { diseases } = state;
-  const { name, code, cure, description, image } = diseases;
-  const { setDiseases } = actions;
+  const { disease } = state;
+  const { name, code, cure, description, image } = disease;
+  const { setDisease } = actions;
 
   return (
     <div>
@@ -28,11 +28,11 @@ let AdminAddText = () => {
               className="disInput"
               value={name}
               onChange={({ target: { value } }) => {
-                const newDiseases = diseases.concat({
-                  ...diseases,
-                  name: value,
-                });
-                setDiseases(newDiseases);
+                const newDiseases = {
+                    ...disease,
+                    name: value,
+                };
+                setDisease(newDiseases);
               }}
             />
           </td>
@@ -46,11 +46,11 @@ let AdminAddText = () => {
                 className="cureInput"
                 value={cure}
                 onChange={({ target: { value } }) => {
-                  const newDiseases = diseases.concat({
-                    ...diseases,
-                    cure: value,
-                  });
-                  setDiseases(newDiseases);
+                  const newDisease = {
+                      ...disease,
+                      cure: value,
+                  }
+                  setDisease(newDisease);
                 }}
             />
           </td>

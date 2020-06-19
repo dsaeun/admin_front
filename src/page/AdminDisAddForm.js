@@ -8,7 +8,8 @@ import axios from "axios";
 
 let AdminDisAddForm = ({ history }) => {
     const { state } = useContext(DiseaseContext);
-    const { name, cure, symptoms, subjects } = state;
+    const { symptoms, subjects } = state;
+    const { name, cure } = state.disease;
     const symptom_ids = symptoms.map((symptom) => symptom.id);
     // const subject_ids = subjects.map((subject) => subject.id);
 
