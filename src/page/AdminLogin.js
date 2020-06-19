@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { AuthConsumer } from "../component/auth/AuthContainer";
 
 const AdminLogin = ({ history }) => {
   const [inputID, setInputID] = useState("");
@@ -27,9 +26,10 @@ const AdminLogin = ({ history }) => {
       });
   }
 
-  if (result.message) {
-    alert(result.message);
-  }
+    if (result.message) {
+        alert(result.message);
+        setResult({});
+    }
 
   return (
     <div className="contentalign">

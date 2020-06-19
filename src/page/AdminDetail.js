@@ -1,31 +1,57 @@
-import React from "react";
-import '../App.css';
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import "../App.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-let AdminDetail=()=>{
+let AdminDetail = ({ match }) => {
+  const [disease, setDisease] = useState({
+    symptoms: [],
+    parts: [],
+    subjects: [],
+    drugs: [],
+  });
+
+  useEffect(() => {
+    axios
+      .get(`/diseases/${match.params.id}`)
+      .then((response) => {
+        setDisease(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(error.response.data);
+      });
+  }, []);
+
   return (
     <div className="contentalign">
       <button className="editBtn">
-        <Link to="./AdminDisEditForm">수정</Link>
-        </button>
+        <Link to="/AdminDisEditForm">수정</Link>
+      </button>
       <h1>질병 상세정보</h1>
       <table>
         <tr>
-          <td>질병명 : </td>
+          <td>질병명 : {disease.name}</td>
         </tr>
         <tr>
-          <td>치료법 : </td>
+          <td>치료법 : {disease.cure}</td>
         </tr>
         <tr>
           <td>
-          증상 : </td>
+            증상 :
+            <ul>
+              {disease.symptoms.map((symptom) => (
+                <li key={symptom.id}>{symptom.name}</li>
+              ))}
+            </ul>
+          </td>
         </tr>
         <tr>
-          <td>진료 병원 : </td>
+          <td>진료 과목 : {disease.subject}</td>
         </tr>
-  </table>
+      </table>
     </div>
-  )
-  }
+  );
+};
 
 export default AdminDetail;

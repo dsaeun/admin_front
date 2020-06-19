@@ -5,7 +5,7 @@ let AdminEditSearch = () => {
   return (
     <div>
       <input type="text" className="searchBox"/>
-      <button className="searchBtn">search</button>
+      <button type="button" className="searchBtn">search</button>
     </div>
   )
 };
