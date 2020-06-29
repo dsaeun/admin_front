@@ -20,6 +20,16 @@ let AdminAddText = () => {
   return (
     <div>
       <table>
+      <tr>
+          <td>
+            질병 코드 :
+            <input
+              type="text"
+              className="disCode"
+              /*여기에 질병코드 연결해주심 됩미당 */
+            />
+          </td>
+        </tr>
         <tr>
           <td>
             질병명 :
@@ -52,6 +62,17 @@ let AdminAddText = () => {
                   }
                   setDisease(newDisease);
                 }}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>증상 설명 :</td>
+        </tr>
+        <tr>
+          <td className="descriptionTD">
+            <textarea
+                className="descriptionDis"
+                /*여기도 증상 설명 연결해주심 됩미당*/
             />
           </td>
         </tr>
