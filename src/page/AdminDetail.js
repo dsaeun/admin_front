@@ -26,7 +26,7 @@ let AdminDetail = ({ match }) => {
   return (
     <div className="contentalign">
       <button className="editBtn">
-        <Link to="/AdminDisEditForm">수정</Link>
+        <Link to={`/AdminDisEditForm/${match.params.id}`}>수정</Link>
       </button>
       <h1>질병 상세정보</h1>
       <table>
@@ -47,7 +47,13 @@ let AdminDetail = ({ match }) => {
           </td>
         </tr>
         <tr>
-          <td>진료 과목 : {disease.subject}</td>
+          <td>진료 과목 :
+            <ul>
+              {disease.subjects.map((subject) => (
+                  <li key={subject.id}>{subject.name}</li>
+              ))}
+            </ul>
+          </td>
         </tr>
       </table>
     </div>

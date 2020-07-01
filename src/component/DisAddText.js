@@ -11,10 +11,10 @@ import DiseaseContext from "../container/Disease/disease";
  * @constructor
  */
 
-let AdminAddText = () => {
+let DisAddText = () => {
   const { state, actions } = useContext(DiseaseContext);
   const { disease } = state;
-  const { name, code, cure, description, image } = disease;
+  const { name, code, cure, description } = disease;
   const { setDisease } = actions;
 
   return (
@@ -26,7 +26,14 @@ let AdminAddText = () => {
             <input
               type="text"
               className="disCode"
-              /*여기에 질병코드 연결해주심 됩미당 */
+              value={code}
+              onChange={({ target: { value } }) => {
+                  const newDiseases = {
+                      ...disease,
+                      code: value,
+                  };
+                  setDisease(newDiseases);
+              }}
             />
           </td>
         </tr>
@@ -59,7 +66,7 @@ let AdminAddText = () => {
                   const newDisease = {
                       ...disease,
                       cure: value,
-                  }
+                  };
                   setDisease(newDisease);
                 }}
             />
@@ -72,7 +79,14 @@ let AdminAddText = () => {
           <td className="descriptionTD">
             <textarea
                 className="descriptionDis"
-                /*여기도 증상 설명 연결해주심 됩미당*/
+                value={description}
+                onChange={({ target: { value } }) => {
+                    const newDisease = {
+                        ...disease,
+                        description: value,
+                    };
+                    setDisease(newDisease);
+                }}
             />
           </td>
         </tr>
@@ -81,4 +95,4 @@ let AdminAddText = () => {
   );
 };
 
-export default AdminAddText;
+export default DisAddText;

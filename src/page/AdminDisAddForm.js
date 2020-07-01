@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import '../App.css';
 import { withRouter } from 'react-router-dom';
-import AdminAddText from '../component/AdminAddText';
+import DisAddText from '../component/DisAddText';
 import AdminDisAdd from '../component/AdminDisAdd';
 import DiseaseContext from "../container/Disease/disease";
 import axios from "axios";
@@ -9,26 +9,26 @@ import axios from "axios";
 let AdminDisAddForm = ({ history }) => {
     const { state } = useContext(DiseaseContext);
     const { symptoms, subjects } = state;
-    const { name, cure } = state.disease;
+    const { name, cure, code, description } = state.disease;
     const symptom_ids = symptoms.map((symptom) => symptom.id);
-    // const subject_ids = subjects.map((subject) => subject.id);
+    const subject_ids = subjects.map((subject) => subject.id);
 
+    // 질병 폼 전송
     const onSubmit = (event) => {
         event.preventDefault();
         const requestBody = {
             content: {
                 name,
-                code: "D05",
+                code,
                 cure,
-                description: "hi",
-                images: "http://image.com",
+                description,
             },
             symptom_ids,
+            subject_ids,
         };
         axios
             .post('/diseases', requestBody)
             .then((response) => {
-                console.log(response.data);
                 alert('질병이 등록되었습니다.');
                 history.push('/AdminDisList');
             })
@@ -43,7 +43,7 @@ let AdminDisAddForm = ({ history }) => {
           <form onSubmit={(event) => onSubmit(event)}>
               <h1>질병 추가</h1>
               <div className="disFormAlign">
-                  <AdminAddText></AdminAddText>
+                  <DisAddText></DisAddText>
                   <AdminDisAdd></AdminDisAdd>
                   <button className="saveBtn" type="submit">
                       저장

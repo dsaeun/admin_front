@@ -17,7 +17,7 @@ let CompleteLogin = () => {
               <Route exact path="/" component={AdminDisList}></Route>
               <Route path="/AdminDisList" component={AdminDisList}></Route>
               <Route path="/AdminDetail/:id" component={AdminDetail}></Route>
-              <Route path="/AdminDisEditForm" component={DiseaseEditContainer}></Route>
+              <Route path="/AdminDisEditForm/:id" component={DiseaseEditContainer}></Route>
               <Route path="/AdminDisAddForm" component={DiseaseAddContainer}></Route>
             </Switch>
         </div>

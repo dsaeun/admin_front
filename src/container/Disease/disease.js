@@ -14,7 +14,7 @@ const DiseaseContext = createContext({
     symptoms: [],
     subjects: [],
   },
-  action: {
+  actions: {
     setDisease: () => {},
     setSymptoms: () => {},
     setSubjects: () => {},
@@ -27,7 +27,6 @@ const DiseaseProvider = ({ children }) => {
     code: "",
     cure: "",
     description: "",
-    image: "",
   });
   const [symptoms, setSymptoms] = useState([]);
   const [subjects, setSubjects] = useState([]);
