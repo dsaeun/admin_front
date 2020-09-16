@@ -14,12 +14,12 @@ const Header = () => {
   return (
       <header className="menu">
         <div className="menuList">
-          <img className="logo" src={logo} aria-hidden alt="logo image"></img>
+          <Link to ="/AdminDisList"><img className="logo" src={logo} aria-hidden alt="logo image"></img></Link>
           <ul>
-            <li><Link to="/AdminDisList">질병정보 수정</Link></li>
-            <li><Link to="/">약학정보 수정</Link></li>
-            <li><Link to="/">근처병원찾기 수정</Link></li>
-            <li><Link to="/">근처약국찾기 수정</Link></li>
+            <li><Link to="/AdminDisList">질병정보 관리</Link></li>
+            <li><Link to="/SymManage">증상 관리</Link></li>
+            <li><Link to="/PartManage">부위 관리</Link></li>
+            <li><Link to="/MediSubject">진료과목 관리</Link></li>
             <li className="logoutBtn"><Link to="/" onClick={() => onClick()}>로그아웃</Link></li>
           </ul>
         </div>
