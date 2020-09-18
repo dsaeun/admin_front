@@ -57,7 +57,7 @@ let AdminSym = () => {
   // 선택한 증상 목록
   const symptomListSelected = symptoms.map((symptom, index) => (
     <div className="checkedBox" key={index}>
-      {symptom.part.name} - {symptom.name}
+      {symptom.part_name} - {symptom.name}
       <button
         type="button"
         className="removeBtn"
