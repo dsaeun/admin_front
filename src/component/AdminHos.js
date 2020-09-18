@@ -3,7 +3,6 @@ import "../App.css";
 import AdminNewHos from "./searchComponent/AdminNewHos";
 import DiseaseContext from "../container/Disease/disease";
 import axios from "axios";
-import AdminNewSym from "./searchComponent/AdminNewSym";
 
 let AdminHos = () => {
   const { state, actions } = useContext(DiseaseContext);
