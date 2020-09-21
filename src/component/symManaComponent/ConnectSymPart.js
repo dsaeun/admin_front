@@ -20,12 +20,10 @@ let ConnectSymPart = () => {
                     </button>
                 <ul className="checklist">
                     <li className="checkli">
-                        체크박스가 안뜸
-                        {/* 
-                        <input type="checkbox" name="symInfo" value="symInfo">
-                            <label>증상정보</label>
-                        </input>
-                        */}
+                        <label>
+                            <input type="checkbox" name="symInfo" value="symInfo"/>
+                            증상정보
+                        </label>
                     </li>
                 </ul>
             </div>

@@ -22,26 +22,22 @@ let SymManage = () => {
                     <button  className="SymptomBtn">
                         search
                     </button>
-                <ul className="checklist">
-                    <li className="checkli">
-                        라디오가 안뜸
-                        {/* 
-                        <input type="radio" name="symInfo" value="symInfo">
-                            <label>증상정보</label>
-                        </input>
-                        */}
-                    </li>
-                </ul>
+                <li className="checkli">
+                    <label>
+                        <input type="radio" name="symInfo" value="symInfo"/>
+                            증상정보
+                    </label>
+                </li>
             </div>
             <p className="caution">* 질병 별 증상, 파트, 진료과목 연결관리는 해당 질병 관리 페이지에서 가능합니다.</p>
-            
+
             <div  className="manageButtonDiv">
                 <button className="manageButton">추가</button>
                 <button className="manageButton">수정</button>
                 <button className="manageButton">연결</button>
                 <button className="manageButton">삭제</button>
             </div>
-            
+
 
             <NewSymText/>
             <EditSym/>
