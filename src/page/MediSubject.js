@@ -3,7 +3,9 @@ import '../App.css';
 
 let MediSubject = () => {
     return(
-        <div><h1>hdafdsfsi</h1></div>
+        <div>
+            <h1>진료과목관리</h1>
+        </div>
     )
 }
 

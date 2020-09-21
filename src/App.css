@@ -234,3 +234,79 @@ td{
 li{
   cursor:pointer;
 }
+
+.connectInfo{
+  background-color: rgba(121, 200, 206, 0.5);
+  width:30%;
+  height:500px;
+  float:left;
+  padding:20px;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+.checkInfo{
+  background-color: rgba(121, 200, 206, 0.5);
+  width:62%;
+  height:500px;
+  float:left;
+  margin-left: 10px;
+  padding:20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+.searchSymptom, .inputSym, .editSym{
+  width:90%;
+  height:35px;
+  display:inline-block;
+}
+
+.SymptomBtn, .inputSymSave, .editSymSave{
+  width:8%;
+  height: 41px;
+  display:inline-block;
+}
+
+.liStyle{
+  list-style: inside;
+}
+
+.checklist{
+  list-style:none;
+  margin-top:0;
+  display: block;
+  padding-left: 0;
+}
+
+.checkli{
+  padding-top:0;
+  margin-top:10px;
+  display: block;
+  height:25px;
+}
+
+.caution{
+  margin: 10px;
+}
+
+.NewSymText, .EditSym, .ConnectSymPart{
+  padding-top:50px;
+}
+
+.manageButton{
+  color:black;
+  font-size: 15px;
+  height:50px;
+  margin-top: 15px;
+  width:100px;
+  margin:20px;
+}
+
+.manageButtonDiv{
+  float:right;
+}

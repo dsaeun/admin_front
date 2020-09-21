@@ -6,7 +6,9 @@ import AdminDetail from "./AdminDetail";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DiseaseAddContainer from "../container/Disease/DiseaseAddContatiner";
 import DiseaseEditContainer from "../container/Disease/DiseaseEditContainer";
-import Drug from "./Drug";
+import SymManage from "./SymManage";
+import PartManage from "./PartManage";
+import MediSubject from "./MediSubject";
 
 let CompleteLogin = () => {
   return (
@@ -20,7 +22,9 @@ let CompleteLogin = () => {
               <Route path="/AdminDetail/:id" component={AdminDetail}></Route>
               <Route path="/AdminDisEditForm/:id" component={DiseaseEditContainer}></Route>
               <Route path="/AdminDisAddForm" component={DiseaseAddContainer}></Route>
-              <Route path="/Drug" component={Drug}></Route>
+              <Route path="/SymManage" component={SymManage}></Route>
+              <Route path="/PartManage" component={PartManage}></Route>
+              <Route path="/MediSubject" component={MediSubject}></Route>
             </Switch>
         </div>
       </div>

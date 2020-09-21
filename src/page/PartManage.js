@@ -3,7 +3,9 @@ import '../App.css';
 
 let PartManage = () => {
     return(
-        <div><h1>hdafdsfsi</h1></div>
+        <div>
+            <h1>부위관리</h1>
+        </div>
     )
 }
 
