@@ -42,6 +42,8 @@ let SymManage = () => {
             <NewSymText/>
             <EditSym/>
             <ConnectSymPart/>
+
+            <button className="saveButton">저장</button>
         </div>
     )
 };
