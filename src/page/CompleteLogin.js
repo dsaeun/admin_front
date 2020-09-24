@@ -8,7 +8,7 @@ import DiseaseAddContainer from "../container/Disease/DiseaseAddContatiner";
 import DiseaseEditContainer from "../container/Disease/DiseaseEditContainer";
 import SymManage from "./SymManage";
 import PartManage from "./PartManage";
-import MediSubject from "./MediSubject";
+import SubjectManage from "./SubjectManage";
 
 let CompleteLogin = () => {
   return (
@@ -24,7 +24,7 @@ let CompleteLogin = () => {
               <Route path="/AdminDisAddForm" component={DiseaseAddContainer}></Route>
               <Route path="/SymManage" component={SymManage}></Route>
               <Route path="/PartManage" component={PartManage}></Route>
-              <Route path="/MediSubject" component={MediSubject}></Route>
+              <Route path="/SubjectManage" component={SubjectManage}></Route>
             </Switch>
         </div>
       </div>

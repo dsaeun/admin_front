@@ -19,7 +19,7 @@ const Header = () => {
             <li><Link to="/AdminDisList">질병정보 관리</Link></li>
             <li><Link to="/SymManage">증상 관리</Link></li>
             <li><Link to="/PartManage">부위 관리</Link></li>
-            <li><Link to="/MediSubject">진료과목 관리</Link></li>
+            <li><Link to="/SubjectManage">진료과목 관리</Link></li>
             <li className="logoutBtn"><Link to="/" onClick={() => onClick()}>로그아웃</Link></li>
           </ul>
         </div>

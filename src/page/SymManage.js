@@ -61,7 +61,6 @@ const SymManage = () => {
 
     // 증상에 연결된 질병 리스트를 받아와 출력합니다
     let diseases
-    console.log(symptomDetail);
     if (symptomDetail.diseases && !_.isEmpty(symptomDetail.diseases)) {
         diseases = symptomDetail.diseases.map((disease, index) => (
             <li className="liStyle" key={index}>

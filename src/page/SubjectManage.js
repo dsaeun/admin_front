@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 
-let MediSubject = () => {
+let SubjectManage = () => {
     return(
         <div>
             <h1>진료과목관리</h1>
@@ -9,4 +9,4 @@ let MediSubject = () => {
     )
 }
 
-export default MediSubject;
+export default SubjectManage;
