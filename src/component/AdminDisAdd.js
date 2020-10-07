@@ -16,7 +16,7 @@ let AdminDisAdd = () => {
       <table className="editDisTable">
         <tr>
           <td className="hosTD">
-            진료 병원 : <AdminHos/>
+            진료 과목 : <AdminHos/>
           </td>
         </tr>
       </table>
