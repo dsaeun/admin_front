@@ -72,7 +72,13 @@ let AdminDetail = ({ match }) => {
             <td>
               상위 질병 :
               <ul>
-                <li>{disease.parent ? disease.parent.name : null}</li>
+                <li>
+                  {disease.parent ? (
+                    <Link to={`/AdminDetail/${disease.parent.id}`}>
+                      {disease.parent ? disease.parent.name : null}
+                    </Link>
+                  ) : null}
+                </li>
               </ul>
             </td>
           </tr>
@@ -81,7 +87,9 @@ let AdminDetail = ({ match }) => {
               하위 질병:
               <ul>
                 {disease.children.map((child) => (
-                  <li key={child.id}>{child.name}</li>
+                  <li key={child.id}>
+                    <Link to={`/AdminDetail/${child.id}`}>{child.name}</Link>
+                  </li>
                 ))}
               </ul>
             </td>
