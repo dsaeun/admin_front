@@ -20,7 +20,7 @@ let AdminDetail = ({ match }) => {
       })
       .catch((error) => {
         console.error(error)
-        alert(error.response.data)
+        //alert(error.response.data)
       })
   }, [match.params.id])
 
