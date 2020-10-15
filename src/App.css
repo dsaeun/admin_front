@@ -186,6 +186,10 @@ td{
   padding-bottom:50px;
 }
 
+.editDisTableDisList{
+  padding-bottom:10px;
+}
+
 .disInput{
   width:720px;
   height:30px;

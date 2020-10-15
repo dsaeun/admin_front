@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "../App.css";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import '../App.css'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 let AdminDetail = ({ match }) => {
   const [disease, setDisease] = useState({
@@ -9,19 +9,20 @@ let AdminDetail = ({ match }) => {
     parts: [],
     subjects: [],
     drugs: [],
-  });
+    children: [],
+  })
 
   useEffect(() => {
     axios
       .get(`/diseases/${match.params.id}`)
       .then((response) => {
-        setDisease(response.data);
+        setDisease(response.data)
       })
       .catch((error) => {
-        console.error(error);
-        alert(error.response.data);
-      });
-  }, []);
+        console.error(error)
+        alert(error.response.data)
+      })
+  }, [match.params.id])
 
   return (
     <div className="contentalign">
@@ -30,44 +31,65 @@ let AdminDetail = ({ match }) => {
       </button>
       <h1>질병 상세정보</h1>
       <table>
-        <tr>
-          <td>질병명 : {disease.name}</td>
-        </tr>
-        <tr>
-          <td>치료법 : {disease.cure}</td>
-        </tr>
-        <tr>
-          <td>
-            증상 :
-            <ul>
-              {disease.symptoms.map((symptom) => (
-                <li key={symptom.id}>{symptom.name}</li>
-              ))}
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            관련 부위 :
-            <ul>
-              {disease.parts.map((part) => (
+        <tbody>
+          <tr>
+            <td>질병명 : {disease.name}</td>
+          </tr>
+          <tr>
+            <td>치료법 : {disease.cure}</td>
+          </tr>
+          <tr>
+            <td>
+              증상 :
+              <ul>
+                {disease.symptoms.map((symptom) => (
+                  <li key={symptom.id}>{symptom.name}</li>
+                ))}
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              관련 부위 :
+              <ul>
+                {disease.parts.map((part) => (
                   <li key={part.id}>{part.name}</li>
-              ))}
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>진료 과목 :
-            <ul>
-              {disease.subjects.map((subject) => (
+                ))}
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              진료 과목 :
+              <ul>
+                {disease.subjects.map((subject) => (
                   <li key={subject.id}>{subject.name}</li>
-              ))}
-            </ul>
-          </td>
-        </tr>
+                ))}
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              상위 질병 :
+              <ul>
+                <li>{disease.parent ? disease.parent.name : null}</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              하위 질병:
+              <ul>
+                {disease.children.map((child) => (
+                  <li key={child.id}>{child.name}</li>
+                ))}
+              </ul>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default AdminDetail;
+export default AdminDetail

@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import axios from "axios";
-import Cookies from "universal-cookie";
+import React, { useState } from 'react'
+import axios from 'axios'
+import Cookies from 'universal-cookie'
 
 const AdminLogin = ({ history }) => {
-  const [inputID, setInputID] = useState("");
-  const [inputPW, setInputPW] = useState("");
-  const [result, setResult] = useState({});
+  const [inputID, setInputID] = useState('')
+  const [inputPW, setInputPW] = useState('')
+  const [result, setResult] = useState({})
 
   function handleClick(actions) {
     axios
-      .post("/sign-in", {
+      .post('/sign-in', {
         nickname: inputID,
         password: inputPW,
       })
       .then((response) => {
-        const cookies = new Cookies();
-        cookies.set("medical-admin-access-token", response.data.token);
-        window.location.reload();
+        const cookies = new Cookies()
+        cookies.set('medical-admin-access-token', response.data.token)
+        window.location.reload()
       })
       .catch((error) => {
         if (error.response) {
-          console.error(error.response.data);
-          setResult(error.response.data);
+          console.error(error.response.data)
+          setResult(error.response.data)
         }
-      });
+      })
   }
 
-    if (result.message) {
-        alert(result.message);
-        setResult({});
-    }
+  if (result.message) {
+    alert(result.message)
+    setResult({})
+  }
 
   return (
     <div className="contentalign">
@@ -57,7 +57,7 @@ const AdminLogin = ({ history }) => {
         Login
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default AdminLogin;
+export default AdminLogin
