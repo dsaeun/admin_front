@@ -8,10 +8,11 @@ import axios from "axios";
 
 let AdminDisAddForm = ({ history }) => {
     const { state } = useContext(DiseaseContext);
-    const { symptoms, subjects } = state;
-    const { name, cure, code, description } = state.disease;
+    const { symptoms, subjects, parts } = state;
+    const { name, cure, code, description, parent_id } = state.disease;
     const symptom_ids = symptoms.map((symptom) => symptom.id);
     const subject_ids = subjects.map((subject) => subject.id);
+    const part_ids = parts.map((part) => part.id);
 
     // 질병 폼 전송
     const onSubmit = (event) => {
@@ -22,9 +23,11 @@ let AdminDisAddForm = ({ history }) => {
                 code,
                 cure,
                 description,
+                parent_id,
             },
             symptom_ids,
             subject_ids,
+            part_ids,
         };
         axios
             .post('/diseases', requestBody)

@@ -47,6 +47,16 @@ let AdminDetail = ({ match }) => {
           </td>
         </tr>
         <tr>
+          <td>
+            관련 부위 :
+            <ul>
+              {disease.parts.map((part) => (
+                  <li key={part.id}>{part.name}</li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+        <tr>
           <td>진료 과목 :
             <ul>
               {disease.subjects.map((subject) => (

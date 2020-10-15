@@ -6,8 +6,8 @@ import DiseaseContext from "../container/Disease/disease";
 
 let AdminSym = () => {
   const { state, actions } = useContext(DiseaseContext);
-  const { symptoms } = state;
-  const { setSymptoms } = actions;
+  const { symptoms, parts } = state;
+  const { setSymptoms, setParts } = actions;
   const [symptomsData, setSymptomsData] = useState([]);
   const [keyword, setKeyword] = useState("");
 
@@ -36,9 +36,16 @@ let AdminSym = () => {
     const newSymptoms = symptoms.concat({
       id,
       name,
-      part_name: part.name,
+      part_name: part ? part.name : "관련 부위 없음",
     });
     setSymptoms(newSymptoms);
+
+    if (part) {
+      const newPart = parts.concat({
+        id: part.id,
+      })
+      setParts(newPart);
+    }
   };
   // 선택한 증상을 선택 취소한다
   const onRemove = (symptomRequest) => {
@@ -51,7 +58,7 @@ let AdminSym = () => {
   // 증상 목록
   const symptomList = symptomsData.map((symptom, index) => (
     <li key={index} onClick={() => onClick(symptom)}>
-      {symptom.part.name} - {symptom.name}
+      {symptom.part ? symptom.part.name: "관련 부위 없음"} - {symptom.name}
     </li>
   ));
   // 선택한 증상 목록
