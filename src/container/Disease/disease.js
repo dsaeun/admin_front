@@ -39,9 +39,7 @@ const DiseaseProvider = ({ children }) => {
   const [symptoms, setSymptoms] = useState([])
   const [subjects, setSubjects] = useState([])
   const [parts, setParts] = useState([])
-  const [selectedDisease, setSelectedDisease] = useState({
-    name: '',
-  })
+  const [selectedDisease, setSelectedDisease] = useState({})
 
   const value = {
     state: { disease, symptoms, subjects, parts, selectedDisease },

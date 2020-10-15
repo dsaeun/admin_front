@@ -61,14 +61,14 @@ let AdminDis = () => {
     </li>
   ))
   // 선택한 증상 목록
-  const diseaseListSelected = (
+  const diseaseListSelected = selectedDisease ? (
     <div className="checkedBox">
       {selectedDisease.name}
       <button type="button" className="removeBtn" onClick={() => onRemove()}>
         X
       </button>
     </div>
-  )
+  ) : null
   // keyword 검색
   const onKeyword = () => {
     axios
