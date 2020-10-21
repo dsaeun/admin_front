@@ -8,11 +8,12 @@ import axios from 'axios'
 
 let AdminDisEditForm = ({ history, match }) => {
   const { state, actions } = useContext(DiseaseContext)
-  const { symptoms, subjects } = state
+  const { symptoms, subjects, parts } = state
   const { name, cure, code, description, parent_id } = state.disease
-  const { setDisease, setSymptoms, setSubjects, setSelectedDisease } = actions
+  const { setDisease, setSymptoms, setSubjects, setSelectedDisease, setParts } = actions
   const symptom_ids = symptoms.map((symptom) => symptom.id)
   const subject_ids = subjects.map((subject) => subject.id)
+  const part_ids = parts.map((part) => part.id)
 
   useEffect(() => {
     axios
@@ -21,6 +22,7 @@ let AdminDisEditForm = ({ history, match }) => {
         setDisease(response.data)
         setSymptoms(response.data.symptoms)
         setSubjects(response.data.subjects)
+        setParts(response.data.parts)
         setSelectedDisease(response.data.parent)
       })
       .catch((error) => {
@@ -41,12 +43,13 @@ let AdminDisEditForm = ({ history, match }) => {
       },
       symptom_ids,
       subject_ids,
+      part_ids,
     }
     axios
       .patch(`/diseases/${match.params.id}`, requestBody)
       .then((response) => {
         alert('질병이 수정되었습니다.')
-        history.push('/AdminDisList')
+        history.push(`/AdminDetail/${match.params.id}`)
       })
       .catch((error) => {
         console.error(error.response.data)

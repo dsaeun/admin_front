@@ -101,7 +101,7 @@ let AdminHos = () => {
       <AdminNewHos
         subjectsData={subjectsData}
         setSubjectsData={setSubjectsData}
-      ></AdminNewHos>
+      />
     </div>
   )
 }

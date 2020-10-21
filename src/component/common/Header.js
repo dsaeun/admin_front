@@ -25,7 +25,7 @@ const Header = () => {
             <Link to="/SymManage">증상 관리</Link>
           </li>
           <li>
-            <Link to="/PartManage">부위 관리</Link>
+            <Link to="/PartManage">관련 부위 관리</Link>
           </li>
           <li>
             <Link to="/SubjectManage">진료과목 관리</Link>

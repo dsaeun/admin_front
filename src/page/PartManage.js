@@ -127,9 +127,9 @@ const PartManage = () => {
 
   return (
     <div>
-      <h1>부위 관리</h1>
+      <h1>관련 부위 관리</h1>
       <div className="connectInfo">
-        <h2>부위별 연결정보</h2>
+        <h2>관련 부위별 연결정보</h2>
         <h3>{partDetail.name}</h3>
         <ul>{diseases}</ul>
       </div>
@@ -150,7 +150,7 @@ const PartManage = () => {
       </div>
 
       <p className="caution">
-        * 질병 별 증상, 파트, 진료과목 연결관리는 해당 질병 관리 페이지에서
+        * 질병 별 증상, 관련 부위, 진료과목 연결관리는 해당 질병 관리 페이지에서
         가능합니다.
       </p>
 
@@ -177,7 +177,7 @@ const PartManage = () => {
           // visible 기능
           onClick={() => {
             if (_.isEmpty(partDetail)) {
-              alert('부위를 선택해야 합니다')
+              alert('관련 부위를 선택해야 합니다')
               return
             }
             visible.EditPart
@@ -198,7 +198,7 @@ const PartManage = () => {
           // visible 기능
           onClick={() => {
             if (_.isEmpty(partDetail)) {
-              alert('부위를 선택해야 합니다')
+              alert('관련 부위를 선택해야 합니다')
               return
             }
 

@@ -40,13 +40,6 @@ let AdminSym = () => {
       part,
     })
     setSymptoms(newSymptoms)
-
-    if (part) {
-      const newPart = parts.concat({
-        id: part.id,
-      })
-      setParts(newPart)
-    }
   }
   // 선택한 증상을 선택 취소한다
   const onRemove = (symptomRequest) => {
@@ -62,6 +55,7 @@ let AdminSym = () => {
       {symptom.part ? symptom.part.name : '관련 부위 없음'} - {symptom.name}
     </li>
   ))
+
   // 선택한 증상 목록
   const symptomListSelected = symptoms.map((symptom, index) => (
     <div className="checkedBox" key={index}>
@@ -109,7 +103,7 @@ let AdminSym = () => {
       <AdminNewSym
         symptomsData={symptomsData}
         setSymptomsData={setSymptomsData}
-      ></AdminNewSym>
+      />
     </div>
   )
 }
