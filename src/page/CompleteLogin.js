@@ -14,23 +14,23 @@ let CompleteLogin = () => {
   return (
     <Router>
       <div className="viewContain">
-        <Header></Header>
+        <Header/>
         <div className="contentalign">
           <Switch>
-            <Route exact path="/" component={AdminDisList}></Route>
-            <Route path="/AdminDisList" component={AdminDisList}></Route>
-            <Route path="/AdminDetail/:id" component={AdminDetail}></Route>
+            <Route exact path="/" component={AdminDisList}/>
+            <Route path="/AdminDisList" component={AdminDisList}/>
+            <Route path="/AdminDetail/:id" component={AdminDetail}/>
             <Route
               path="/AdminDisEditForm/:id"
               component={DiseaseEditContainer}
-            ></Route>
+            />
             <Route
               path="/AdminDisAddForm"
               component={DiseaseAddContainer}
-            ></Route>
-            <Route path="/SymManage" component={SymManage}></Route>
-            <Route path="/PartManage" component={PartManage}></Route>
-            <Route path="/SubjectManage" component={SubjectManage}></Route>
+            />
+            <Route path="/SymManage" component={SymManage}/>
+            <Route path="/PartManage" component={PartManage}/>
+            <Route path="/SubjectManage" component={SubjectManage}/>
           </Switch>
         </div>
       </div>

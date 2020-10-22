@@ -3,7 +3,7 @@ import '../App.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-let AdminDetail = ({ match }) => {
+let AdminDetail = ({ match, history }) => {
   const [disease, setDisease] = useState({
     symptoms: [],
     parts: [],
@@ -20,14 +20,27 @@ let AdminDetail = ({ match }) => {
       })
       .catch((error) => {
         console.error(error)
-        //alert(error.response.data)
       })
   }, [match.params.id])
+
+  const onDelete = () => {
+    axios.delete(`/diseases/${match.params.id}`)
+        .then((response) => {
+          alert('질병이 삭제되었습니다.')
+          history.push(`/AdminDisList/${match.params.id}`)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+  }
 
   return (
     <div className="contentalign">
       <button className="editBtn">
         <Link to={`/AdminDisEditForm/${match.params.id}`}>수정</Link>
+      </button>
+      <button className="editBtn" onClick={() => onDelete()}>
+        삭제
       </button>
       <h1>질병 상세정보</h1>
       <table>
