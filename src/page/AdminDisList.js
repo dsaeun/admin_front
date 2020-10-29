@@ -36,7 +36,7 @@ let AdminDisList = () => {
   ))
   return (
     <div className="contentalign">
-      <h1>질병 정보 수정</h1>
+      <h1>질병 정보 목록</h1>
       <div className="searchAlign">
         <input
           type="text"
