@@ -9,6 +9,7 @@ import DiseaseEditContainer from '../container/Disease/DiseaseEditContainer'
 import SymManage from './SymManage'
 import PartManage from './PartManage'
 import SubjectManage from './SubjectManage'
+import UserManage from "./UserManage";
 
 let CompleteLogin = () => {
   return (
@@ -31,6 +32,7 @@ let CompleteLogin = () => {
             <Route path="/SymManage" component={SymManage}/>
             <Route path="/PartManage" component={PartManage}/>
             <Route path="/SubjectManage" component={SubjectManage}/>
+            <Route path="/UserManage" component={UserManage}/>
           </Switch>
         </div>
       </div>

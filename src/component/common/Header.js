@@ -30,6 +30,9 @@ const Header = () => {
           <li>
             <Link to="/SubjectManage">진료과목 관리</Link>
           </li>
+          <li>
+            <Link to="/UserManage">관리자 관리</Link>
+          </li>
           <li className="logoutBtn">
             <Link to="/" onClick={() => onClick()}>
               로그아웃
