@@ -8,15 +8,15 @@ const EditPart = ({ partDetail, partsRefresh }) => {
   return (
     <div className="EditSym">
       <h2>부위 수정 - {partDetail.name}</h2>
-      <button className="loadName" onClick={() => setPartName(partDetail.name)}>
-        불러오기
-      </button>
       <input
         type="text"
         className="editSym"
         value={partName}
         onChange={(event) => setPartName(event.target.value)}
       />
+      <button className="loadName" onClick={() => setPartName(partDetail.name)}>
+        불러오기
+      </button>
       <button
         className="editSymSave"
         onClick={() => {

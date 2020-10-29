@@ -13,6 +13,7 @@ const NewUserText = ({ usersRefresh }) => {
         <div className="NewSymText">
             <h2>새 관리자 추가</h2>
             <input
+            placeholder="닉네임"
                 type="text"
                 className="inputSym"
                 onChange={(event) =>
@@ -23,6 +24,7 @@ const NewUserText = ({ usersRefresh }) => {
                 }
             />
             <input
+            placeholder="비밀번호"
                 type="password"
                 className="inputSym"
                 onChange={(event) =>
@@ -33,6 +35,7 @@ const NewUserText = ({ usersRefresh }) => {
                 }
             />
             <input
+            placeholder="역할"
                 type="text"
                 className="inputSym"
                 onChange={(event) =>

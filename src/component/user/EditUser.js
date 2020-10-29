@@ -11,18 +11,6 @@ const EditUser = ({ userDetail, usersRefresh }) => {
     return (
         <div className="EditSym">
             <h2>관리자 수정 - {userDetail.nickname}</h2>
-            <button
-                className="loadName"
-                onClick={() =>
-                    setUser({
-                        ...user,
-                        nickname: userDetail.nickname,
-                        role: userDetail.role,
-                    })
-                }
-            >
-                불러오기
-            </button>
             <input
                 type="text"
                 className="editSym"
@@ -45,6 +33,18 @@ const EditUser = ({ userDetail, usersRefresh }) => {
                     })
                 }
             />
+            <button
+                className="loadName"
+                onClick={() =>
+                    setUser({
+                        ...user,
+                        nickname: userDetail.nickname,
+                        role: userDetail.role,
+                    })
+                }
+            >
+                불러오기
+            </button>
             <button
                 className="editSymSave"
                 onClick={() => {
