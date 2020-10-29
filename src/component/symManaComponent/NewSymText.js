@@ -9,6 +9,7 @@ const NewSymText = ({ symptomsRefresh }) => {
     <div className="NewSymText">
       <h2>새 증상 추가</h2>
       <input
+        placeholder="증상명"
         type="text"
         className="inputSym"
         onChange={(event) => setSymptomName(event.target.value)}

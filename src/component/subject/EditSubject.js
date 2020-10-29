@@ -11,19 +11,8 @@ const EditSubject = ({ subjectDetail, subjectsRefresh }) => {
   return (
     <div className="EditSym">
       <h2>진료과목 수정 - {subjectDetail.name}</h2>
-      <button
-        className="loadName"
-        onClick={() =>
-          setSubject({
-            ...subject,
-            name: subjectDetail.name,
-            code: subjectDetail.code,
-          })
-        }
-      >
-        불러오기
-      </button>
       <input
+        placeholder="과목명"
         type="text"
         className="editSym"
         value={subject.name}
@@ -35,6 +24,7 @@ const EditSubject = ({ subjectDetail, subjectsRefresh }) => {
         }
       />
       <input
+        placeholder="코드"
         type="text"
         className="editSym"
         value={subject.code}
@@ -45,6 +35,19 @@ const EditSubject = ({ subjectDetail, subjectsRefresh }) => {
           })
         }
       />
+
+<button
+        className="loadName"
+        onClick={() =>
+          setSubject({
+            ...subject,
+            name: subjectDetail.name,
+            code: subjectDetail.code,
+          })
+        }
+      >
+        불러오기
+      </button>
       <button
         className="editSymSave"
         onClick={() => {

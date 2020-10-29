@@ -12,6 +12,7 @@ const NewSubjectText = ({ subjectsRefresh }) => {
     <div className="NewSymText">
       <h2>새 진료과목 추가</h2>
       <input
+        placeholder="과목명"
         type="text"
         className="inputSym"
         onChange={(event) =>
@@ -22,6 +23,7 @@ const NewSubjectText = ({ subjectsRefresh }) => {
         }
       />
       <input
+        placeholder="코드"
         type="text"
         className="inputSym"
         onChange={(event) =>

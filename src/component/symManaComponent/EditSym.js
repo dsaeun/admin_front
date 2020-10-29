@@ -8,18 +8,19 @@ const EditSym = ({ symptomDetail, symptomsRefresh }) => {
   return (
     <div className="EditSym">
       <h2>증상 수정 - {symptomDetail.name}</h2>
+      <input
+        placeholder="내용"
+        type="text"
+        className="editSym"
+        value={symptomName}
+        onChange={(event) => setSymptomName(event.target.value)}
+      />
       <button
         className="loadName"
         onClick={() => setSymptomName(symptomDetail.name)}
       >
         불러오기
       </button>
-      <input
-        type="text"
-        className="editSym"
-        value={symptomName}
-        onChange={(event) => setSymptomName(event.target.value)}
-      />
       <button
         className="editSymSave"
         onClick={() => {

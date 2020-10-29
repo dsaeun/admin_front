@@ -112,6 +112,14 @@ a{
   height:400px;
   overflow-y:scroll;
   margin-top: 50px;
+  border: solid 2px black;
+  border-left: none;
+  border-right: none;
+}
+
+a{
+  text-decoration: none;
+  color:black;
 }
 
 div{
@@ -215,6 +223,7 @@ td{
   height:30px;
   display: inline-block;
   margin:0 auto;
+  font-size: 22px;
 }
 
 .disFormAlign{
@@ -248,6 +257,7 @@ li{
   border-radius: 20px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  overflow-y: scroll;
 }
 
 
@@ -261,18 +271,35 @@ li{
   border-radius: 20px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+  overflow-y: scroll;
 }
 
-
-.searchSymptom, .inputSym, .editSym{
-  width:90%;
+.searchSymptom{
+  width:500px;
   height:35px;
   display:inline-block;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.inputSym, .editSym{
+  width:300px;
+  height:35px;
+  display:inline-block;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin-left:10px;
+  margin-right:30px;
+  font-size: 20px;
 }
 
 .SymptomBtn, .inputSymSave, .editSymSave{
   width:8%;
-  height: 41px;
+  height: 40px;
   display:inline-block;
 }
 
@@ -300,6 +327,7 @@ li{
 
 .NewSymText, .EditSym, .ConnectSymPart{
   padding-top:50px;
+  margin-bottom: 80px;
 }
 
 .manageButton{
@@ -327,4 +355,5 @@ li{
 
 .loadName{
   width:10%;
+  height:41px;
 }
