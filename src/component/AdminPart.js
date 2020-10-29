@@ -6,9 +6,8 @@ import axios from 'axios'
 
 let AdminPart = () => {
     const { state, actions } = useContext(DiseaseContext)
-    const { parts } = state
-    const { setParts } = actions
-    const [partsData, setPartsData] = useState([])
+    const { parts, partsData } = state
+    const { setParts, setPartsData } = actions
     const [keyword, setKeyword] = useState('')
 
     // 파트 목록을 불러온다
@@ -98,10 +97,7 @@ let AdminPart = () => {
             <div className="editDisList">
                 <ul>{partList}</ul>
             </div>
-            <AdminNewPart
-                partsData={partsData}
-                setPartsData={setPartsData}
-            />
+            <AdminNewPart/>
         </div>
     )
 }

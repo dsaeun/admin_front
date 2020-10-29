@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import '../../App.css'
 import axios from 'axios'
+import DiseaseContext from "../../container/Disease/disease";
 
 let AdminNewSearch = ({ symptomsData, setSymptomsData }) => {
   const [symptom, setSymptom] = useState({
@@ -8,14 +9,16 @@ let AdminNewSearch = ({ symptomsData, setSymptomsData }) => {
     parts: [],
     partId: 1,
   })
-  const [parts, setParts] = useState([])
+    const { state, actions } = useContext(DiseaseContext)
+    const { partsData } = state
+    const { setPartsData } = actions
 
   // 파트 목록 불러오기
   useEffect(() => {
     axios
       .get('/parts')
       .then((response) => {
-        setParts(response.data)
+          setPartsData(response.data)
       })
       .catch((error) => {
         console.error(error)
@@ -24,8 +27,6 @@ let AdminNewSearch = ({ symptomsData, setSymptomsData }) => {
 
   // 보낼 증상 데이터에 파트 id 추가
   const onChangePart = (event) => {
-    // console.log(event.target.value);
-    // console.log(event.target.value);
     const newSymptom = {
       ...symptom,
       partId: event.target.value,
@@ -55,9 +56,9 @@ let AdminNewSearch = ({ symptomsData, setSymptomsData }) => {
         className="drop"
         onChange={(event) => onChangePart(event)}
       >
-        {parts.map((part) => (
-          <option key={part.id} value={part.id}>
-            {part.name}
+        {partsData.map((partData) => (
+          <option key={partData.id} value={partData.id}>
+            {partData.name}
           </option>
         ))}
       </select>

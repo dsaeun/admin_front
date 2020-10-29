@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
 import '../../App.css'
 import axios from 'axios'
+import DiseaseContext from "../../container/Disease/disease";
 
-let AdminNewPart = ({ partsData, setPartsData }) => {
+let AdminNewPart = () => {
     const [part, setPart] = useState({
         name: '',
     })
+    const { state, actions } = useContext(DiseaseContext)
+    const { partsData } = state
+    const { setPartsData } = actions
 
-    // 증상 데이터 보내기
+    // 파트 데이터 보내기
     const onSubmit = () => {
         axios
             .post('/parts', part)
