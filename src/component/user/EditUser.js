@@ -13,6 +13,7 @@ const EditUser = ({ userDetail, usersRefresh }) => {
             <h2>관리자 수정 - {userDetail.nickname}</h2>
             <input
                 type="text"
+                placeholder="아이디"
                 className="editSym"
                 value={user.nickname}
                 onChange={(event) =>
@@ -24,6 +25,7 @@ const EditUser = ({ userDetail, usersRefresh }) => {
             />
             <input
                 type="text"
+                placeholder="권한"
                 className="editSym"
                 value={user.role}
                 onChange={(event) =>
